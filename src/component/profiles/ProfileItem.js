@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const ProfileItem = ({ profile }) => {
   const {
@@ -20,13 +20,13 @@ const ProfileItem = ({ profile }) => {
         </p>
         <p className="my-1">{location && <span>{location}</span>}</p>
         <Link to={`/profile/${_id}`} className="btn btn-primary">
-          {" "}
-            View Profile
-          </Link>
+          {' '}
+          View Profile
+        </Link>
       </div>
       <ul>
         {skills.slice(0, 4).map((skill, index) => (
-          <li className="text-primary">
+          <li className="text-primary" key={index}>
             <i className="fas fa-check"></i>
             {skill}
           </li>

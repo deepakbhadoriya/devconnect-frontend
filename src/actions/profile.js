@@ -36,13 +36,14 @@ export const getProfiles = () => async (dispatch) => {
     dispatch({ type: GET_PROFILES, payload: res.data });
   } catch (error) {
     console.log(error);
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: {
-        msg: error.response.statusTest,
-        status: error.response.status,
-      },
-    });
+    error.response &&
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: {
+          msg: error.response.statusTest,
+          status: error.response.status,
+        },
+      });
   }
 };
 
